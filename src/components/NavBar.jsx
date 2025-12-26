@@ -6,7 +6,7 @@ import axios from "axios";
 import { removeUser } from "../utils/userSlice";
 import { removeUserFromFeed } from "../utils/feedSlice";
 import { removeConnections } from "../utils/connectionSlice";
-import { removeRequest } from "../utils/requestSlice";
+import { resetRequests } from "../utils/requestSlice";
 const NavBar = () => {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch(); 
@@ -23,7 +23,7 @@ const NavBar = () => {
       dispatch(removeUser());
       dispatch(removeUserFromFeed());
       dispatch(removeConnections());
-      dispatch(removeRequest());
+      dispatch(resetRequests());
       
       return navigate("/login");
 
