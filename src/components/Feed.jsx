@@ -25,6 +25,8 @@ const Feed = () => {
     fetchFeed();
   }, [feed, dispatch]);
 
+  if(!feed || feed.length === 0) return <div className='flex justify-center items-center'>No more users in feed</div>;
+
   return (
     feed && (
       <div className='flex justify-center items-center'>
